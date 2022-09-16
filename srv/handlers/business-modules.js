@@ -35,7 +35,6 @@ module.exports = {
 
   validateDates: req => {
     validateCreationDate(req)         //valida creation date
-    validateSalesNPricingDates(req)   //valida los campos salesOrderDate and pricingDate
   }
 }
 
