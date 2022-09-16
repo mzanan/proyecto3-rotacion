@@ -1,0 +1,12 @@
+ID;Category;TradeTerms;Description;
+1;E;EXW;Ex Work;
+2;F;FCA;Free Carrier;
+3;F;FAS;Free Alongside Ship;
+4;F;FOB;Free on Board;
+5;C;CPT;Carriage paid to;
+6;C;CIP;Carriage and Insurance paid to;
+7;C;CFR;Cost and Freight;
+8;C;CIF;Cost Insurance and Freight;
+9;D;DAP;Delivered at Place;
+10;D;DPU;Delivered at Place Unloaded;
+11;D;DDP;Delivered Duty Paid;
