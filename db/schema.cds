@@ -11,8 +11,10 @@ entity BusinessPartner as projection on ApiBussiness.A_BusinessPartner { * }
 // ------------------------------------- Entidades propias --------------------------------------- //
 entity mySales {
   key SalesOrder                     : String;
-      myBusiness                     : Association to myBusiness;
+      myBusiness                     : Composition of many myBusiness;
+      myInconterms                   : Association to one IncotermsClassification;
       myItems                        : Composition of many to_Item;
+
       SalesOrderType                 : String;
       SalesOrganization              : String;
       DistributionChannel            : String;
@@ -100,6 +102,7 @@ entity mySales {
 entity myBusiness {
   key BusinessPartner                : Integer;
       mySales                        : Association to mySales;
+      
       Customer                       : String;
       Supplier                       : String;
       AcademicTitle                  : String;
@@ -172,7 +175,9 @@ entity myBusiness {
 entity to_Item {
   key ID      : String;
       uri     : String;
+
       mySales : Association to mySales;
+      
 }
 
 entity IncotermsClassification {
@@ -180,6 +185,9 @@ entity IncotermsClassification {
       Category    : String(1);
       TradeTerms  : String;
       Description : String;
+
+      mySales     : Association to mySales;
+
 }
 
 annotate Api.SalesOrder with @(SelectionFields : [SalesOrganization, DistributionChannel]); //fiori elements

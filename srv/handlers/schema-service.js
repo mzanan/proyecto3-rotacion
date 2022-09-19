@@ -41,11 +41,11 @@ module.exports = cds.service.impl(async function () {
   const apiBusiness = await cds.connect.to("API_BUSINESS_PARTNER")   //conexión al api hub
   
   this.on("READ", "BusinessPartner", async req => {         //leyendo la información contenida en el api hub
-    return apiBusiness.run(req.query)                   //se almacena la data en nuestra entidad BusinessPartner
+    return apiBusiness.run(req.query)                       //se almacena la data en nuestra entidad BusinessPartner
   })
 
   this.after("READ", "BusinessPartner", async req => {      //después de recopilar la data de la api...
-    businessModules.insertMyBusiness(req)                //...la insertamos en una nueva entidad
+    businessModules.insertMyBusiness(req)                   //...la insertamos en una nueva entidad
   })
   
   this.before("CREATE", "myBusiness", async req => {        //método CREATE
