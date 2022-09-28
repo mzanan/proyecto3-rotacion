@@ -23,30 +23,3 @@ module.exports = {
 const isValidDate = date => {                   //recibe una fecha como parámetro y y devuelve un boolean
   return date instanceof Date && !isNaN(date)
 }
-
-// ------------------- DOS FUNCIONES DIFERENTES PARA ELIMINAR ELEMENTOS DUPLICADOS DENTRO DE UN ARRAY -------------------- //
-// Dejo las dos pero ninguna me dio el resultado esperado, por eso no se utilizan
-function removeDuplicates(originalArray, prop) {
-  let newArray = []
-  let lookupObject  = {}
-
-  for(let i in originalArray) {
-     lookupObject[originalArray[i][prop]] = originalArray[i]
-  }
-
-  for(i in lookupObject) {
-      newArray.push(lookupObject[i])
-  }
-   return newArray
-}
-
-const validateRepetated = req => {
-  const result = [];
-  req.forEach((item)=>{
-    //pushes only unique element
-    if(!result.includes(item.SalesOrganization) ){
-      result.push(item);
-    }
-  })
-  return result
-}
