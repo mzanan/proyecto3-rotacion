@@ -1,5 +1,3 @@
-const cds = require("@sap/cds")
-
 module.exports = { 
   insertEntity: async (req, entity) => {
     try {

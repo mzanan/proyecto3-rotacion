@@ -1,5 +1,3 @@
-const cds = require("@sap/cds")
-
 module.exports = {
   validateSalesNPricingDates: req => {
     const d = req.data
